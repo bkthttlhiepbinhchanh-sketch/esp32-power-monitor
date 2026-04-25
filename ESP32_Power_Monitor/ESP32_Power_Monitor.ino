@@ -372,7 +372,7 @@ void sendPowerOnLog(struct tm timeinfo) {
   jsonData += "\"ip\":\"" + WiFi.localIP().toString() + "\"";
   jsonData += "}";
   
-  http.POST(jsonData);
+  // http.POST(jsonData); //Disabled post to webhook
   http.end();
   
   String teleMsg = "⚡ Nguồn " + String(DEVICE_SHORT_NAME) + " BẬT\n🔢 Lần #" + String(dailyPowerOnCount) + "\n📦 v" + currentVersion + "\n⏰ " + String(timeStr);
